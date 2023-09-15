@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  retryWrites: true,
 });
 mongoose.connection.on('connected', () => {
   console.log('Connected to MongoDB');
